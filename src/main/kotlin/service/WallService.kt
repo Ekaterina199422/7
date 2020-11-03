@@ -3,7 +3,7 @@ import ru.netology.attachments.*
 import ru.netology.exception.*
 import ru.netology.wall.*
 
-class WallService {
+object WallService {
     private var postsArray = emptyArray<Post>()
     private var comments = emptyArray<Comment>()
     private var reports = emptyArray<Report>()
