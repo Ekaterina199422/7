@@ -7,8 +7,7 @@ object WallService {
     private var postsArray = emptyArray<Post>()
     private var comments = emptyArray<Comment>()
     private var reports = emptyArray<Report>()
-    private var idPost = 0
-    private var idComment = 0
+    
 
     fun add(post: Post): Post {
         idPost += 1
@@ -56,9 +55,8 @@ object WallService {
 
     fun createComment(comment: Comment) {
         for (post in postsArray) {
-            if (postId == post.id) {
-                idComment += 1
-                comment.id = idComment
+            if (comment.replyToComment == post.id) {
+               
                 comments += comment
                 return
             }
