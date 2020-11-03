@@ -54,7 +54,7 @@ object WallService {
         throw CommentNotFoundException("comment id=$commentId not found")
     }
 
-    fun createComment(postId: Int, comment: Comment) {
+    fun createComment(comment: Comment) {
         for (post in postsArray) {
             if (postId == post.id) {
                 idComment += 1
