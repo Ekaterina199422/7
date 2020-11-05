@@ -1,10 +1,31 @@
-package ru.netology.attachments
+package attachments
 
-sealed class Attachments {
+sealed class Attachment {
     abstract val type: String
 }
-data class AudioAttachments(override val type: String = "audio", val audio: Audio) : Attachments()
-data class EventAttachments(override val type: String = "event", val event: Event) : Attachments()
-data class NoteAttachments(override val type: String = "note", val note: Note) : Attachments()
-data class PhotoAttachments(override val type: String = "photo", val photo: Photo) : Attachments()
-data class VideoAttachments(override val type: String = "note", val video: Video) : Attachments()
+
+
+data class AttachmentPhoto(
+        override val type: String = "photo",
+        val attachmentContent: Photo
+) : Attachment()
+
+data class AttachmentVideo(
+        override val type: String = "video",
+        val attachmentContent: Video
+) : Attachment()
+
+data class AttachmentAudio(
+        override val type: String = "audio",
+        val attachmentContent: Audio
+) : Attachment()
+
+data class AttachmentDoc(
+        override val type: String = "doc",
+        val attachmentContent: Doc
+) : Attachment()
+
+data class AttachmentLink(
+        override val type: String = "link",
+        val attachmentContent: Link
+) : Attachment()
